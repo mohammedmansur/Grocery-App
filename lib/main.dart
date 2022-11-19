@@ -1,6 +1,6 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
+import 'package:grocery/Home.dart';
 import 'package:lottie/lottie.dart';
 
 void main() {
@@ -31,7 +31,13 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Timer(
       Duration(seconds: 5),
-      () {},
+      () {
+        Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Home(),
+            ));
+      },
     );
     super.initState();
   }
