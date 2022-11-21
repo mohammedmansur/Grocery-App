@@ -1,8 +1,20 @@
 import 'package:flutter/material.dart';
 
 class FruitPro extends StatefulWidget {
-  const FruitPro({super.key});
-
+  const FruitPro(
+      {super.key,
+      required this.name,
+      required this.backImg,
+      required this.category,
+      required this.deatil,
+      required this.imgPath,
+      required this.price});
+  final String name;
+  final String category;
+  final String deatil;
+  final String imgPath;
+  final Color backImg;
+  final double price;
   @override
   State<FruitPro> createState() => _FruitProState();
 }
@@ -25,7 +37,7 @@ class _FruitProState extends State<FruitPro> {
                   height: height * 0.48,
                   width: width,
                   decoration: BoxDecoration(
-                    color: Colors.orange[50],
+                    color: widget.backImg,
                     borderRadius: BorderRadius.vertical(
                       bottom: Radius.circular(100),
                     ),
@@ -42,6 +54,7 @@ class _FruitProState extends State<FruitPro> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         GestureDetector(
+                          onTap: () => Navigator.pop(context),
                           child: Container(
                             child: Icon(
                               Icons.arrow_back_ios_new,
@@ -76,7 +89,7 @@ class _FruitProState extends State<FruitPro> {
                     left: 20,
                     right: 20,
                     child: Image.asset(
-                      'assets/orange.png',
+                      widget.imgPath,
                       height: 350,
                       width: 350,
                     ))
@@ -92,7 +105,7 @@ class _FruitProState extends State<FruitPro> {
                 Padding(
                   padding: const EdgeInsets.only(left: 30, right: 20),
                   child: Text(
-                    'Orange Fruit',
+                    widget.name + ' Fruits',
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 34),
                   ),
                 ),
@@ -216,7 +229,7 @@ class _FruitProState extends State<FruitPro> {
                 Padding(
                   padding: const EdgeInsets.only(left: 34, right: 20),
                   child: Text(
-                    'An orange is a fruit of various citrus species in the family Rutaceae ); it primarily refers to Citrus × sinensis, which is also called sweet orange.',
+                    widget.deatil,
                     style: TextStyle(color: Colors.grey),
                   ),
                 ),

@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:grocery/Home.dart';
+import 'package:grocery/src/Home/Home.dart';
 import 'package:lottie/lottie.dart';
 
 void main() {

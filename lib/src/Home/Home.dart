@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:grocery/All_item.dart';
-import 'package:grocery/Fruit.dart';
-import 'package:grocery/Meat.dart';
-import 'package:grocery/Vegetable.dart';
-import 'package:grocery/card.dart';
+
+import '../item/All_item.dart';
+import '../item/Fruit.dart';
+import '../item/Meat.dart';
+import '../item/Vegetable.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -16,7 +14,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _isselected = 0;
-
+  int tab = 0;
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -47,11 +45,11 @@ class _HomeState extends State<Home> {
               ],
             )
           ],
-          toolbarHeight: 180,
+          toolbarHeight: 140,
 
           flexibleSpace: Stack(children: [
             Positioned(
-              top: 40,
+              top: 80,
               left: 15,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -122,25 +120,72 @@ class _HomeState extends State<Home> {
           ]),
 
           bottom: TabBar(
+              onTap: (value) => setState(() {
+                    tab = value;
+                  }),
               unselectedLabelColor: Colors.grey,
-              indicatorSize: TabBarIndicatorSize.tab,
-              indicator: BoxDecoration(
-                gradient: LinearGradient(
-                    colors: [Colors.green, Color.fromARGB(255, 233, 223, 210)]),
-                borderRadius: BorderRadius.circular(50),
-              ),
+              labelColor: Colors.green,
+              indicatorColor: Color.fromARGB(255, 245, 244, 244),
               tabs: [
                 Tab(
-                  text: 'All',
+                  child: Column(
+                    children: [
+                      Text('All'),
+                      Container(
+                        margin: EdgeInsets.only(top: 4),
+                        height: 8,
+                        width: 8,
+                        decoration: BoxDecoration(
+                            color: tab == 0 ? Colors.green : Colors.grey,
+                            borderRadius: BorderRadius.circular(4)),
+                      ),
+                    ],
+                  ),
                 ),
                 Tab(
-                  text: 'Fruite',
+                  child: Column(
+                    children: [
+                      Text('Fruit'),
+                      Container(
+                        margin: EdgeInsets.only(top: 4),
+                        height: 8,
+                        width: 8,
+                        decoration: BoxDecoration(
+                            color: tab == 1 ? Colors.green : Colors.grey,
+                            borderRadius: BorderRadius.circular(4)),
+                      ),
+                    ],
+                  ),
                 ),
                 Tab(
-                  text: 'Vegetable',
+                  child: Column(
+                    children: [
+                      Text('Vegetable'),
+                      Container(
+                        margin: EdgeInsets.only(top: 4),
+                        height: 8,
+                        width: 8,
+                        decoration: BoxDecoration(
+                            color: tab == 2 ? Colors.green : Colors.grey,
+                            borderRadius: BorderRadius.circular(4)),
+                      ),
+                    ],
+                  ),
                 ),
                 Tab(
-                  text: 'Meat',
+                  child: Column(
+                    children: [
+                      Text('Meat'),
+                      Container(
+                        margin: EdgeInsets.only(top: 4),
+                        height: 8,
+                        width: 8,
+                        decoration: BoxDecoration(
+                            color: tab == 3 ? Colors.green : Colors.grey,
+                            borderRadius: BorderRadius.circular(4)),
+                      ),
+                    ],
+                  ),
                 )
               ]),
         ),
