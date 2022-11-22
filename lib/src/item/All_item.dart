@@ -117,7 +117,7 @@ class All extends StatelessWidget {
           ),
         ),
         Container(
-          padding: EdgeInsets.only(left: 20),
+          padding: EdgeInsets.only(left: 20, top: 20, bottom: 15),
           width: double.infinity,
           color: Color.fromARGB(255, 245, 244, 244),
           child: Text(

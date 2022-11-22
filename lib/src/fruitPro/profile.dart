@@ -243,7 +243,7 @@ class _FruitProState extends State<FruitPro> {
               child: Stack(
                 children: [
                   Positioned(
-                    top: 10,
+                    top: 6,
                     left: 34,
                     child: Text(
                       'Price',
@@ -251,28 +251,29 @@ class _FruitProState extends State<FruitPro> {
                     ),
                   ),
                   Positioned(
-                    top: 32,
+                    top: 23,
                     left: 34,
                     child: Text(
                       '\$13.99',
                       style: TextStyle(
                           letterSpacing: -3,
-                          color: Colors.indigo[900],
+                          // color: Colors.indigo[900],
+                          color: Colors.green,
                           fontSize: 34,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
                   Positioned(
                     top: 10,
-                    right: 10,
+                    right: 20,
                     child: GestureDetector(
                       onTap: () {},
                       child: Container(
                         height: 60,
-                        width: 180,
+                        width: 220,
                         decoration: BoxDecoration(
                             color: Colors.green,
-                            borderRadius: BorderRadius.circular(10)),
+                            borderRadius: BorderRadius.circular(100)),
                         child: Center(
                           child: Text(
                             'Add to Cart',

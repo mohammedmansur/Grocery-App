@@ -18,16 +18,16 @@ class _LoginState extends State<Login> {
       body: ListView(
         children: [
           Container(
-            height: 340,
+            height: 300,
             width: double.infinity,
             child: Lottie.asset(
-              'assets/Lottie/farmer.json',
+              'assets/Lottie/sabata.json',
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 18.0),
+            padding: const EdgeInsets.only(left: 18.0, bottom: 10),
             child: Row(
-              children: [
+              children: const [
                 Text(
                   "Login",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
@@ -45,17 +45,18 @@ class _LoginState extends State<Login> {
                     fillColor: Colors.white,
                     focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.grey),
-                        borderRadius: BorderRadius.all(Radius.circular(50))),
+                        borderRadius: BorderRadius.all(Radius.circular(100))),
                     focusColor: Colors.grey,
                     prefixIcon: Icon(
                       Icons.person,
+                      color: Colors.grey,
                       size: 30,
                     ),
                     hintText: 'enter user name',
-                    labelText: 'name',
+                    labelText: 'Name',
                     labelStyle: TextStyle(color: Colors.grey),
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(90))),
+                        borderRadius: BorderRadius.all(Radius.circular(100))),
                   ),
                 ),
                 const SizedBox(
@@ -68,35 +69,42 @@ class _LoginState extends State<Login> {
                       fillColor: Colors.white,
                       focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.grey),
-                          borderRadius: BorderRadius.all(Radius.circular(50))),
+                          borderRadius: BorderRadius.all(Radius.circular(100))),
                       focusColor: Colors.grey,
-                      prefixIcon: Icon(Icons.lock),
-                      suffixIcon: Icon(Icons.remove_red_eye_sharp),
+                      prefixIcon: Icon(
+                        Icons.lock,
+                        color: Colors.grey,
+                      ),
+                      suffixIcon: Icon(
+                        Icons.remove_red_eye_sharp,
+                        color: Colors.grey,
+                      ),
                       // helperText: "8 charector with symbol",
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(90))),
+                          borderRadius: BorderRadius.all(Radius.circular(100))),
                       hintText: 'Password',
                       labelText: 'Password',
                       labelStyle: TextStyle(color: Colors.grey),
                     )),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    TextButton(
-                      onPressed: () {},
-                      child: Text('Forget Your Password?'),
-                    )
-                  ],
-                ),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.end,
+                //   children: [
+                //     TextButton(
+                //       onPressed: () {},
+                //       child: Text('Forget Your Password?'),
+                //     )
+                //   ],
+                // ),
                 const SizedBox(
-                  height: 10,
+                  height: 30,
                 ),
                 GestureDetector(
                   child: Container(
-                      height: 50.0,
+                      height: 55.0,
+                      width: 400,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30),
-                          color: Colors.green),
+                          color: Color.fromARGB(255, 76, 175, 80)),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -122,13 +130,17 @@ class _LoginState extends State<Login> {
                   height: 10,
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Dont have an account? '),
+                    //   Text('Dont have an account? '),
+                    TextButton(
+                      onPressed: () {},
+                      child: Text('Forget Your Password?'),
+                    ),
                     TextButton(
                       onPressed: () {},
                       child: Text('Signup'),
-                    )
+                    ),
                   ],
                 )
               ],
