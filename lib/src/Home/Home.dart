@@ -123,6 +123,9 @@ class _HomeState extends State<Home> {
               onTap: (value) => setState(() {
                     tab = value;
                   }),
+              overlayColor: MaterialStateProperty.resolveWith((states) {
+                return Color.fromARGB(255, 245, 244, 244);
+              }),
               unselectedLabelColor: Colors.grey,
               labelColor: Colors.green,
               indicatorColor: Color.fromARGB(255, 245, 244, 244),
@@ -135,9 +138,11 @@ class _HomeState extends State<Home> {
                         margin: EdgeInsets.only(top: 4),
                         height: 8,
                         width: 8,
-                        decoration: BoxDecoration(
-                            color: tab == 0 ? Colors.green : Colors.grey,
-                            borderRadius: BorderRadius.circular(4)),
+                        decoration: tab == 0
+                            ? BoxDecoration(
+                                color: tab == 0 ? Colors.green : Colors.grey,
+                                borderRadius: BorderRadius.circular(4))
+                            : null,
                       ),
                     ],
                   ),
@@ -150,9 +155,11 @@ class _HomeState extends State<Home> {
                         margin: EdgeInsets.only(top: 4),
                         height: 8,
                         width: 8,
-                        decoration: BoxDecoration(
-                            color: tab == 1 ? Colors.green : Colors.grey,
-                            borderRadius: BorderRadius.circular(4)),
+                        decoration: tab == 1
+                            ? BoxDecoration(
+                                color: tab == 1 ? Colors.green : Colors.grey,
+                                borderRadius: BorderRadius.circular(4))
+                            : null,
                       ),
                     ],
                   ),
@@ -165,9 +172,11 @@ class _HomeState extends State<Home> {
                         margin: EdgeInsets.only(top: 4),
                         height: 8,
                         width: 8,
-                        decoration: BoxDecoration(
-                            color: tab == 2 ? Colors.green : Colors.grey,
-                            borderRadius: BorderRadius.circular(4)),
+                        decoration: tab == 2
+                            ? BoxDecoration(
+                                color: tab == 2 ? Colors.green : Colors.grey,
+                                borderRadius: BorderRadius.circular(4))
+                            : null,
                       ),
                     ],
                   ),
@@ -180,9 +189,11 @@ class _HomeState extends State<Home> {
                         margin: EdgeInsets.only(top: 4),
                         height: 8,
                         width: 8,
-                        decoration: BoxDecoration(
-                            color: tab == 3 ? Colors.green : Colors.grey,
-                            borderRadius: BorderRadius.circular(4)),
+                        decoration: tab == 3
+                            ? BoxDecoration(
+                                color: tab == 3 ? Colors.green : Colors.grey,
+                                borderRadius: BorderRadius.circular(4))
+                            : null,
                       ),
                     ],
                   ),
@@ -195,27 +206,6 @@ class _HomeState extends State<Home> {
             Fruit(),
             Vegetable(),
             Meat(),
-          ],
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _isselected,
-          backgroundColor: Color.fromARGB(255, 255, 255, 255),
-          selectedItemColor: Color.fromARGB(255, 0, 0, 0),
-          unselectedItemColor: Colors.grey,
-          iconSize: 30,
-          onTap: (index) {
-            setState(() {
-              _isselected = index;
-            });
-          },
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
-            BottomNavigationBarItem(
-                backgroundColor: Colors.green,
-                icon: Icon(Icons.shopping_cart_outlined),
-                label: ''),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.person_rounded), label: ''),
           ],
         ),
       ),

@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:grocery/src/Home/Home.dart';
+import 'package:grocery/src/default.dart';
 import 'package:lottie/lottie.dart';
 
 void main() {
@@ -35,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
         Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) => Home(),
+              builder: (context) => DefaultScreen(),
             ));
       },
     );

@@ -47,62 +47,249 @@ class All extends StatelessWidget {
                   imgPath: 'assets/fruits/strawberry.png',
                   backImg: Colors.red[50]!,
                   price: 10.5),
-            ],
-          ),
-        ),
-        Container(
-          height: 260,
-          child: ListView(
-            scrollDirection: Axis.horizontal,
-            children: [
               itemCard(
                   context: context,
-                  name: 'Orange',
-                  category: 'Fruits',
+                  name: 'Bell Pepper',
+                  category: 'Vegitables',
                   deatil:
                       'An orange is a fruit of various citrus species in the family Rutaceae ); it primarily refers to Citrus × sinensis, which is also called sweet orange.',
-                  imgPath: 'assets/fruits/orange.png',
+                  imgPath: 'assets/veg/bellpepper.png',
                   backImg: Colors.orange[50]!,
                   price: 10.5),
               itemCard(
                   context: context,
-                  name: 'Apple',
-                  category: 'Fruits',
+                  name: 'Broocli',
+                  category: 'Vegitables',
                   deatil: 'hhhhhhhh',
-                  imgPath: 'assets/fruits/apple.png',
+                  imgPath: 'assets/veg/broccli.png',
                   backImg: Colors.green[50]!,
                   price: 10.5),
               itemCard(
                   context: context,
-                  name: 'PinApple',
-                  category: 'Fruits',
+                  name: 'Lettuce',
+                  category: 'Vegitables',
                   deatil: 'hhhhhhhh',
-                  imgPath: 'assets/fruits/pinapple.png',
+                  imgPath: 'assets/veg/lettuce.png',
                   backImg: Colors.yellow[50]!,
                   price: 10.5),
               itemCard(
                   context: context,
-                  name: 'Strawberry',
-                  category: 'Fruits',
+                  name: 'Tomato',
+                  category: 'Vegitables',
                   deatil: 'hhhhhhhh',
-                  imgPath: 'assets/fruits/strawberry.png',
+                  imgPath: 'assets/veg/tomato.png',
+                  backImg: Colors.red[50]!,
+                  price: 10.5),
+              itemCard(
+                  context: context,
+                  name: 'Corn',
+                  category: 'Grain',
+                  deatil:
+                      'An orange is a fruit of various citrus species in the family Rutaceae ); it primarily refers to Citrus × sinensis, which is also called sweet orange.',
+                  imgPath: 'assets/grain/corn.png',
+                  backImg: Colors.orange[50]!,
+                  price: 10.5),
+              itemCard(
+                  context: context,
+                  name: 'Millet',
+                  category: 'Grain',
+                  deatil: 'hhhhhhhh',
+                  imgPath: 'assets/grain/millet.png',
+                  backImg: Colors.green[50]!,
+                  price: 10.5),
+              itemCard(
+                  context: context,
+                  name: 'Rice',
+                  category: 'Grain',
+                  deatil: 'hhhhhhhh',
+                  imgPath: 'assets/grain/rice.png',
+                  backImg: Colors.yellow[50]!,
+                  price: 10.5),
+              itemCard(
+                  context: context,
+                  name: 'Rye',
+                  category: 'Grain',
+                  deatil: 'hhhhhhhh',
+                  imgPath: 'assets/grain/rye.png',
                   backImg: Colors.red[50]!,
                   price: 10.5),
             ],
           ),
         ),
+        Container(
+          padding: EdgeInsets.only(left: 20),
+          width: double.infinity,
+          color: Color.fromARGB(255, 245, 244, 244),
+          child: Text(
+            'Recent Shop',
+            style: TextStyle(
+              fontSize: 22,
+              letterSpacing: -0.5,
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        Container(
+            color: Color.fromARGB(255, 245, 244, 244),
+            height: 100,
+            child: Stack(
+              children: [
+                Positioned(
+                  left: 20,
+                  top: 5,
+                  child: Image.asset(
+                    'assets/veg/tomato.png',
+                    height: 80,
+                    width: 80,
+                  ),
+                ),
+                Positioned(
+                  left: 110,
+                  top: 20,
+                  child: Text(
+                    'Tomato Vegetables',
+                    style: TextStyle(
+                      letterSpacing: -0.5,
+                      fontSize: 18,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Positioned(
+                  left: 110,
+                  top: 50,
+                  child: Text(
+                    'Vegitable',
+                    style: TextStyle(
+                      letterSpacing: -0.5,
+                      fontSize: 16,
+                      color: Colors.grey,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Positioned(
+                  right: 10,
+                  top: 40,
+                  child: Text(
+                    '\$15.99',
+                    style: TextStyle(
+                        color: Colors.green,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ],
+            )),
+        Container(
+            color: Color.fromARGB(255, 245, 244, 244),
+            height: 100,
+            child: Stack(
+              children: [
+                Positioned(
+                  left: 20,
+                  top: 5,
+                  child: Image.asset(
+                    'assets/fruits/orange.png',
+                    height: 80,
+                    width: 80,
+                  ),
+                ),
+                Positioned(
+                  left: 110,
+                  top: 20,
+                  child: Text(
+                    'Orange Fruits',
+                    style: TextStyle(
+                      letterSpacing: -0.5,
+                      fontSize: 18,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Positioned(
+                  left: 110,
+                  top: 50,
+                  child: Text(
+                    'Fruits',
+                    style: TextStyle(
+                      letterSpacing: -0.5,
+                      fontSize: 16,
+                      color: Colors.grey,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Positioned(
+                  right: 10,
+                  top: 40,
+                  child: Text(
+                    '\$15.99',
+                    style: TextStyle(
+                        color: Colors.green,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ],
+            )),
+        Container(
+            color: Color.fromARGB(255, 245, 244, 244),
+            height: 100,
+            child: Stack(
+              children: [
+                Positioned(
+                  left: 20,
+                  top: 5,
+                  child: Image.asset(
+                    'assets/grain/corn.png',
+                    height: 80,
+                    width: 80,
+                  ),
+                ),
+                Positioned(
+                  left: 110,
+                  top: 20,
+                  child: Text(
+                    'Corn Grain',
+                    style: TextStyle(
+                      letterSpacing: -0.5,
+                      fontSize: 18,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Positioned(
+                  left: 110,
+                  top: 50,
+                  child: Text(
+                    'Grain',
+                    style: TextStyle(
+                      letterSpacing: -0.5,
+                      fontSize: 16,
+                      color: Colors.grey,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Positioned(
+                  right: 10,
+                  top: 40,
+                  child: Text(
+                    '\$15.99',
+                    style: TextStyle(
+                        color: Colors.green,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ],
+            )),
       ],
     );
   }
 }
-// ListView.builder(
-//       scrollDirection: Axis.horizontal,
-//       itemCount: 5,
-//       itemBuilder: (context, index) {
-//         return ProductCard(
-//           Pname: 'Orange',
-//           category: 'Fruit',
-//           price: '2.00',
-//         );
-//       },
-//     );
