@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:grocery/src/default.dart';
 import 'package:lottie/lottie.dart';
 
 class Login extends StatefulWidget {
@@ -17,6 +18,19 @@ class _LoginState extends State<Login> {
     return Scaffold(
       body: ListView(
         children: [
+          Row(
+            children: [
+              IconButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DefaultScreen(),
+                        ));
+                  },
+                  icon: Icon(Icons.arrow_back)),
+            ],
+          ),
           Container(
             height: 300,
             width: double.infinity,
