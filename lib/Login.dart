@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:grocery/Profile.dart';
 import 'package:grocery/src/default.dart';
 import 'package:lottie/lottie.dart';
 
@@ -32,7 +33,7 @@ class _LoginState extends State<Login> {
             ],
           ),
           Container(
-            height: 300,
+            height: 250,
             width: double.infinity,
             child: Lottie.asset(
               'assets/Lottie/sabata.json',
@@ -113,6 +114,10 @@ class _LoginState extends State<Login> {
                   height: 30,
                 ),
                 GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Profile()));
+                  },
                   child: Container(
                       height: 55.0,
                       width: 400,

@@ -17,30 +17,32 @@ class _DefaultScreenState extends State<DefaultScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: screen[_isselected],
-      bottomNavigationBar: _isselected != 2
-          ? BottomNavigationBar(
-              currentIndex: _isselected,
-              backgroundColor: Color.fromARGB(255, 255, 255, 255),
-              selectedItemColor: Color.fromARGB(255, 0, 0, 0),
-              unselectedItemColor: Colors.grey,
-              iconSize: 30,
-              onTap: (index) {
-                setState(() {
-                  _isselected = index;
-                });
-              },
-              items: const [
-                BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
-                BottomNavigationBarItem(
-                    activeIcon: Icon(Icons.shopping_cart_outlined),
-                    backgroundColor: Colors.green,
-                    icon: Icon(Icons.shopping_cart_outlined),
-                    label: ''),
-                BottomNavigationBarItem(
-                    icon: Icon(Icons.person_rounded), label: ''),
-              ],
-            )
-          : null,
+      bottomNavigationBar: ClipRRect(
+        borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(50), topRight: Radius.circular(50)),
+        child: BottomNavigationBar(
+          currentIndex: _isselected,
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
+          selectedItemColor: Color.fromARGB(255, 0, 0, 0),
+          unselectedItemColor: Colors.grey,
+          iconSize: 30,
+          onTap: (index) {
+            setState(() {
+              _isselected = index;
+            });
+          },
+          items: const [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
+            BottomNavigationBarItem(
+                activeIcon: Icon(Icons.shopping_cart_outlined),
+                backgroundColor: Colors.green,
+                icon: Icon(Icons.shopping_cart_outlined),
+                label: ''),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.person_rounded), label: ''),
+          ],
+        ),
+      ),
     );
   }
 }
