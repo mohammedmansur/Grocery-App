@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery/Login.dart';
 import 'package:grocery/src/Cart/cart.dart';
 import 'package:grocery/src/Home/Home.dart';
 
@@ -11,7 +12,7 @@ class DefaultScreen extends StatefulWidget {
 
 class _DefaultScreenState extends State<DefaultScreen> {
   var _isselected = 0;
-  var screen = [Home(), Cart(), Cart()];
+  var screen = [Home(), Cart(), Login()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(

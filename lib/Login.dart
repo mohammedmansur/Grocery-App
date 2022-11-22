@@ -15,16 +15,13 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: ListView(
         children: [
           Container(
-            height: 380,
+            height: 340,
             width: double.infinity,
-            child: Padding(
-              padding: const EdgeInsets.only(top: 30),
-              child: Lottie.asset(
-                'assets/Lottie/thinkoffood.json',
-              ),
+            child: Lottie.asset(
+              'assets/Lottie/farmer.json',
             ),
           ),
           Padding(
@@ -94,23 +91,32 @@ class _LoginState extends State<Login> {
                 const SizedBox(
                   height: 10,
                 ),
-                Container(
-                  height: 50.0,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      gradient: LinearGradient(colors: [
-                        Color.fromARGB(255, 184, 249, 137),
-                        Color.fromARGB(255, 55, 219, 69)
-                      ])),
-                  child: ElevatedButton.icon(
-                    onPressed: () {},
-                    label: Text("login"),
-                    icon: Icon(Icons.login),
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(Colors.transparent.alpha),
-                        fixedSize: Size(500, 50),
-                        shape: StadiumBorder()),
-                  ),
+                GestureDetector(
+                  child: Container(
+                      height: 50.0,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          color: Colors.green),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Login",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Icon(
+                            Icons.login,
+                            color: Colors.white,
+                            size: 24,
+                          ),
+                        ],
+                      )),
                 ),
                 SizedBox(
                   height: 10,
