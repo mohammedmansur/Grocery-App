@@ -16,13 +16,14 @@ class _DefaultScreenState extends State<DefaultScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       body: screen[_isselected],
       bottomNavigationBar: ClipRRect(
         borderRadius: BorderRadius.only(
             topLeft: Radius.circular(50), topRight: Radius.circular(50)),
         child: BottomNavigationBar(
           currentIndex: _isselected,
-          backgroundColor: Color.fromARGB(255, 255, 255, 255),
+          //backgroundColor: Color.fromARGB(255, 255, 255, 255),
           selectedItemColor: Color.fromARGB(255, 0, 0, 0),
           unselectedItemColor: Colors.grey,
           iconSize: 30,
