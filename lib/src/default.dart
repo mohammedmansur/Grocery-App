@@ -22,8 +22,8 @@ class _DefaultScreenState extends State<DefaultScreen> {
             topLeft: Radius.circular(50), topRight: Radius.circular(50)),
         child: BottomNavigationBar(
           currentIndex: _isselected,
-          backgroundColor: Color.fromARGB(255, 255, 255, 255),
-          selectedItemColor: Color.fromARGB(255, 0, 0, 0),
+          type: BottomNavigationBarType.shifting,
+          selectedItemColor: Colors.green,
           unselectedItemColor: Colors.grey,
           iconSize: 30,
           onTap: (index) {
@@ -32,14 +32,18 @@ class _DefaultScreenState extends State<DefaultScreen> {
             });
           },
           items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
             BottomNavigationBarItem(
-                activeIcon: Icon(Icons.shopping_cart_outlined),
-                backgroundColor: Colors.green,
+                activeIcon: Icon(Icons.home),
+                icon: Icon(Icons.home_outlined),
+                label: ''),
+            BottomNavigationBarItem(
+                activeIcon: Icon(Icons.shopping_cart),
                 icon: Icon(Icons.shopping_cart_outlined),
                 label: ''),
             BottomNavigationBarItem(
-                icon: Icon(Icons.person_rounded), label: ''),
+                activeIcon: Icon(Icons.person_rounded),
+                icon: Icon(Icons.person_outline_rounded),
+                label: ''),
           ],
         ),
       ),

@@ -13,7 +13,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int _isselected = 0;
   int tab = 0;
   @override
   Widget build(BuildContext context) {
@@ -21,6 +20,7 @@ class _HomeState extends State<Home> {
       length: 4,
       child: Scaffold(
         appBar: AppBar(
+          backwardsCompatibility: false,
           elevation: 0,
           // backgroundColor: Color.fromARGB(255, 245, 244, 244),
           backgroundColor: Color.fromARGB(255, 245, 244, 244),
@@ -45,11 +45,11 @@ class _HomeState extends State<Home> {
               ],
             )
           ],
-          toolbarHeight: 140,
+          toolbarHeight: 160,
 
           flexibleSpace: Stack(children: [
             Positioned(
-              top: 80,
+              top: 60,
               left: 15,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

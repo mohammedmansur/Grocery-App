@@ -1,11 +1,20 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
-import 'package:grocery/src/Home/Home.dart';
+
+import 'package:flutter/services.dart';
 import 'package:grocery/src/default.dart';
 import 'package:lottie/lottie.dart';
+import 'package:responsive_framework/responsive_wrapper.dart';
+import 'package:responsive_framework/utils/scroll_behavior.dart';
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]);
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -13,8 +22,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
+      builder: (context, child) => ResponsiveWrapper.builder(
+        BouncingScrollWrapper.builder(context, child!),
+        maxWidth: 1200,
+        minWidth: 400,
+        defaultScale: true,
+        breakpoints: [
+          const ResponsiveBreakpoint.resize(400, name: MOBILE),
+          const ResponsiveBreakpoint.autoScale(800, name: TABLET),
+          const ResponsiveBreakpoint.autoScale(1000, name: TABLET),
+          const ResponsiveBreakpoint.resize(1200, name: DESKTOP),
+          const ResponsiveBreakpoint.autoScale(2460, name: DESKTOP),
+        ],
+      ),
       home: SplashScreen(),
     );
   }
@@ -78,6 +100,28 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
           )
         ],
+      ),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    Size screenSize = MediaQuery.of(context).size;
+    Orientation orientation = MediaQuery.of(context).orientation;
+
+    return Scaffold(
+      body: Container(
+        color: Colors.grey,
+        child: Center(
+          child: Text(
+            'View\n\n' +
+                '[MediaQuery width]: ${screenSize.width.toStringAsFixed(2)}\n\n' +
+                '[MediaQuery orientation]: $orientation',
+            style: TextStyle(color: Colors.white, fontSize: 18),
+          ),
+        ),
       ),
     );
   }
